@@ -149,6 +149,7 @@ namespace MedicalDRS
             this.Controls.Add(this.menutitulo);
             this.MainMenuStrip = this.menu;
             this.Name = "Inicio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();

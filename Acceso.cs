@@ -16,5 +16,41 @@ namespace MedicalDRS
         {
             InitializeComponent();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_acceder_Click(object sender, EventArgs e)
+        {
+            /*
+             Creamos una instancia del formulario Inicio
+             */
+            Inicio form = new Inicio();
+            //Mostramos inicio
+            form.Show();
+            //Ocultamos Acceso
+            this.Hide();
+
+            form.FormClosing += frm_closing;
+        }
+
+        private void frm_closing(object sender, FormClosingEventArgs e)
+        {
+            txt_clave.Text = "";
+
+            this.Show();
+        }
     }
 }
