@@ -1,0 +1,19 @@
+﻿--PERSONA
+--1	5525625	Max	Verstappen	Emilian	1997-10-30	Belgica	222-3312211
+--USUARIO
+--1	1	111	max@med.com	123
+--RECEPCION
+--1	1
+
+use clinica
+go
+
+insert into persona values('5525625',	'Max',	'Verstappen',	'Emilian',	'1997-10-30',	'Belgica',	'222-3312211')
+insert into persona values('2292902',	'Lewis',	'Hamilton',	'Choque',	'1990-02-23',	'La Paz',	'33121222')
+go
+
+insert into usuario values(1,111,'max@med.com','123')
+go
+
+insert into recepcion values(1)
+go

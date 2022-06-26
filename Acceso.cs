@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using CapaNegocio;
+using CapaEntidad;
+
 namespace MedicalDRS
 {
     public partial class Acceso : Form
@@ -34,16 +37,26 @@ namespace MedicalDRS
 
         private void btn_acceder_Click(object sender, EventArgs e)
         {
-            /*
+
+            Usuario Objusuario = new CN_Usuario().Listar().Where(u => u.Correo == txt_correo.Text && u.Clave == txt_clave.Text).FirstOrDefault();
+            if(Objusuario != null)
+            {
+                /*
              Creamos una instancia del formulario Inicio
              */
-            Inicio form = new Inicio();
-            //Mostramos inicio
-            form.Show();
-            //Ocultamos Acceso
-            this.Hide();
+                Inicio form = new Inicio();
+                //Mostramos inicio
+                form.Show();
+                //Ocultamos Acceso
+                this.Hide();
 
-            form.FormClosing += frm_closing;
+                form.FormClosing += frm_closing;
+            }
+            else
+            {
+                MessageBox.Show("Datos Incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            
         }
 
         private void frm_closing(object sender, FormClosingEventArgs e)
