@@ -109,7 +109,7 @@ namespace MedicalDRS
             this.menu_perfil.Size = new System.Drawing.Size(80, 69);
             this.menu_perfil.Text = "Perfil";
             this.menu_perfil.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.menu_perfil.Click += new System.EventHandler(this.iconMenuItem1_Click);
+
             // 
             // menutitulo
             // 

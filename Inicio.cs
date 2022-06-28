@@ -26,10 +26,7 @@ namespace MedicalDRS
             InitializeComponent();
         }
 
-        private void iconMenuItem1_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void AbrirFormulario(IconMenuItem menu , Form formulario)
         {
@@ -65,7 +62,7 @@ namespace MedicalDRS
         private void Inicio_Load(object sender, EventArgs e)
         {
 
-            //CONTROL DE ACCESO 111 = ADMINISTRADOR 222 = DOCTOR 333 = RECEPCION
+            //CONTROL DE ACCESO 111 = ADMINISTRADOR 222 = DOCTOR 333 = RECEPCION 
             Usuario Objusuario = new CN_Usuario().Listar().Where(u => u.IdUsuario == UsuarioActual.IdUsuario).FirstOrDefault();
 
             if(Objusuario.CodPermisos != 111)
