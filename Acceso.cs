@@ -44,7 +44,7 @@ namespace MedicalDRS
                 /*
              Creamos una instancia del formulario Inicio
              */
-                Inicio form = new Inicio();
+                Inicio form = new Inicio(Objusuario);
                 //Mostramos inicio
                 form.Show();
                 //Ocultamos Acceso

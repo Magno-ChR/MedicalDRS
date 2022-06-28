@@ -3,22 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using System.Data;
 using System.Data.SqlClient;
 using CapaEntidad;
 
 namespace CapaDato
 {
-    public class CD_Usuario
+    public class CD_Persona
     {
-        public List<Usuario> ListarUsuarios()
+        public List<Persona> ListarPersonas()
         {
-            List<Usuario> Lista = new List<Usuario>();
+            List<Persona> Lista = new List<Persona>();
             using (SqlConnection ObjConexion = new SqlConnection(Conexion.cadena))
             {
                 try
                 {
-                    string consulta = "select IdUsuario,IdPersona,CodPermisos,Correo,Clave from usuario";
+
+                    string consulta = "select * from persona";
 
                     SqlCommand comando = new SqlCommand(consulta, ObjConexion);
                     comando.CommandType = CommandType.Text;
@@ -29,23 +31,29 @@ namespace CapaDato
                     {
                         while (lector.Read())
                         {
-                            Lista.Add(new Usuario() 
-                            { 
-                                IdUsuario = Convert.ToInt32(lector["IdUsuario"]),
+                            Lista.Add(new Persona()
+                            {
                                 IdPersona = Convert.ToInt32(lector["IdPersona"]),
-                                CodPermisos = Convert.ToInt32(lector["CodPermisos"]),
-                                Correo = lector["Correo"].ToString(),
-                                Clave = lector["Clave"].ToString(),
+                                CedulaIdentidad = lector["CedulaIdentidad"].ToString(),
+                                Nombres = lector["Nombres"].ToString(),
+                                ApellidoP = lector["ApellidoP"].ToString(),
+                                ApellidoM = lector["ApellidoM"].ToString(),
+                                FechaNac = lector["FechaNac"].ToString(),
+                                NroCelular = lector["NroCelular"].ToString(),
+                                Procedencia = lector["Procedencia"].ToString(),
                             });
                         }
                     }
-                }catch(Exception ex)
+
+                }
+                catch(Exception ex)
                 {
-                    Lista = new List<Usuario>();
+                    Lista = new List<Persona>();
                 }
             }
 
             return Lista;
+
         }
     }
 }

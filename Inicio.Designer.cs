@@ -37,6 +37,9 @@ namespace MedicalDRS
             this.menutitulo = new System.Windows.Forms.MenuStrip();
             this.label1 = new System.Windows.Forms.Label();
             this.contenedor = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.text_usuario = new System.Windows.Forms.Label();
+            this.menu_usuarios = new FontAwesome.Sharp.IconMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,10 +49,11 @@ namespace MedicalDRS
             this.menu_registro,
             this.menu_cita,
             this.menu_areas,
-            this.menu_perfil});
+            this.menu_perfil,
+            this.menu_usuarios});
             this.menu.Location = new System.Drawing.Point(0, 71);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(800, 73);
+            this.menu.Size = new System.Drawing.Size(1052, 73);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
@@ -114,7 +118,7 @@ namespace MedicalDRS
             this.menutitulo.Location = new System.Drawing.Point(0, 0);
             this.menutitulo.Name = "menutitulo";
             this.menutitulo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menutitulo.Size = new System.Drawing.Size(800, 71);
+            this.menutitulo.Size = new System.Drawing.Size(1052, 71);
             this.menutitulo.TabIndex = 1;
             this.menutitulo.Text = "menuStrip2";
             // 
@@ -124,7 +128,7 @@ namespace MedicalDRS
             this.label1.BackColor = System.Drawing.Color.DarkRed;
             this.label1.Font = new System.Drawing.Font("Open Sans", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(298, 19);
+            this.label1.Location = new System.Drawing.Point(12, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(197, 37);
             this.label1.TabIndex = 2;
@@ -135,14 +139,53 @@ namespace MedicalDRS
             this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedor.Location = new System.Drawing.Point(0, 144);
             this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(800, 306);
+            this.contenedor.Size = new System.Drawing.Size(1052, 517);
             this.contenedor.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.DarkRed;
+            this.label2.Font = new System.Drawing.Font("Montserrat Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(599, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(107, 20);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Bienvenido:";
+            // 
+            // text_usuario
+            // 
+            this.text_usuario.AutoSize = true;
+            this.text_usuario.BackColor = System.Drawing.Color.DarkRed;
+            this.text_usuario.Font = new System.Drawing.Font("Montserrat Light", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text_usuario.ForeColor = System.Drawing.Color.White;
+            this.text_usuario.Location = new System.Drawing.Point(605, 38);
+            this.text_usuario.Name = "text_usuario";
+            this.text_usuario.Size = new System.Drawing.Size(93, 16);
+            this.text_usuario.TabIndex = 5;
+            this.text_usuario.Text = "text_usuario";
+            // 
+            // menu_usuarios
+            // 
+            this.menu_usuarios.AutoSize = false;
+            this.menu_usuarios.IconChar = FontAwesome.Sharp.IconChar.UserFriends;
+            this.menu_usuarios.IconColor = System.Drawing.Color.Black;
+            this.menu_usuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menu_usuarios.IconSize = 50;
+            this.menu_usuarios.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.menu_usuarios.Name = "menu_usuarios";
+            this.menu_usuarios.Size = new System.Drawing.Size(80, 69);
+            this.menu_usuarios.Text = "Usuarios";
+            this.menu_usuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1052, 661);
+            this.Controls.Add(this.text_usuario);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.contenedor);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menu);
@@ -151,6 +194,7 @@ namespace MedicalDRS
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Inicio_Load);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.ResumeLayout(false);
@@ -166,8 +210,11 @@ namespace MedicalDRS
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconMenuItem menu_registro;
         private FontAwesome.Sharp.IconMenuItem menu_cita;
-        private FontAwesome.Sharp.IconMenuItem menu_areas;
         private System.Windows.Forms.Panel contenedor;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label text_usuario;
+        private FontAwesome.Sharp.IconMenuItem menu_areas;
+        private FontAwesome.Sharp.IconMenuItem menu_usuarios;
     }
 }
 
